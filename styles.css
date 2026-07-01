@@ -161,7 +161,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
-    padding-top: 80px;
+    padding-top: 150px;
     background: var(--hero-gradient);
     position: relative;
     overflow: hidden;
