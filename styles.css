@@ -1,11 +1,11 @@
-:root {
+﻿:root {
     /* Paleta de colores - Rojo Vino y Blanco */
     --primary-color: #800020; /* Rojo Vino (Burgundy) */
-    --primary-light: #a31c3a; /* Rojo vino más claro para hovers */
+    --primary-light: #a31c3a; /* Rojo vino mÃ¡s claro para hovers */
     --secondary-color: #ffffff; /* Blanco puro */
     --accent-color: #e5b3b3; /* Tono suave rosado/vino para fondos sutiles */
     --bg-color: #fbf9f9; /* Blanco apenas tintado para que no canse la vista */
-    --text-color: #2b1d1f; /* Texto oscuro con ligero tinte cálido */
+    --text-color: #2b1d1f; /* Texto oscuro con ligero tinte cÃ¡lido */
     --text-light: #ffffff;
     
     /* Gradientes y Efectos */
@@ -13,7 +13,7 @@
     --glass-bg: rgba(128, 0, 32, 0.85); /* Fondo vino con transparencia */
     --glass-border: rgba(255, 255, 255, 0.2);
     
-    /* Tipografía */
+    /* TipografÃ­a */
     --font-main: 'Outfit', sans-serif;
 }
 
@@ -263,7 +263,7 @@ body {
 .card-image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; background-color: var(--secondary-color); border-radius: 25px;
     object-position: center;
     transition: transform 0.5s ease;
 }
@@ -492,4 +492,39 @@ body {
         width: 100%;
         height: 50vh;
     }
+}
+/* Galería Section */
+.galeria {
+    padding: 6rem 5%;
+    background: var(--secondary-color);
+}
+.galeria-desc {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+.galeria-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain; background-color: var(--secondary-color); border-radius: 25px;
+    border-radius: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.galeria-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(128, 0, 32, 0.2);
+    z-index: 2;
+    position: relative;
 }
