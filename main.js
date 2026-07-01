@@ -50,6 +50,25 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
+    // Información de Productos (Catálogo)
+    const productInfo = {
+        '3.jpeg': {
+            title: 'Mangoneada Exótica',
+            price: '$2.50',
+            desc: '¡DULCE, PICOSITA Y REFRESCANTE! El antojo que te enamora. Mango fresco y natural con chamoy, chile y limón. Hielo raspado bien frío. El balance perfecto de dulce y picosito. ¡Una explosión de sabor!'
+        },
+        'WhatsApp Image 2026-06-30 at 7.03.50 PM.jpeg': {
+            title: 'Fresas con Crema / Frappé de Oreo',
+            price: '¡Delicioso!',
+            desc: '¡Delicioso, cremoso y refrescante! El antojo perfecto en cada sorbo. Galletas Oreo crujientes, crema batida suave y deliciosa, chocolate en cada sorbo y fresas frescas naturales. ¡No podrás resistirte!'
+        },
+        'WhatsApp Image 2026-06-30 at 7.03.51 PM.jpeg': {
+            title: 'Promoción Especial',
+            price: 'Consulta en local',
+            desc: 'Aprovecha nuestras deliciosas promociones y combos. ¡Frescura y sabor que te encantarán!'
+        }
+    };
+
     // Lightbox / Modal Logic
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
@@ -59,21 +78,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('close-modal');
     const orderBtn = document.getElementById('modal-order-btn');
 
+    // Efecto de Lupa (Zoom Hover) en el modal
+    modalImg.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = e.target.getBoundingClientRect();
+        // Calculamos la posición X y Y del ratón dentro de la imagen (en porcentaje)
+        const x = (e.clientX - left) / width * 100;
+        const y = (e.clientY - top) / height * 100;
+        
+        modalImg.style.transformOrigin = `${x}% ${y}%`;
+        modalImg.style.transform = 'scale(2.2)'; // Nivel de Zoom
+        modalImg.style.cursor = 'zoom-in';
+    });
+    
+    modalImg.addEventListener('mouseleave', () => {
+        modalImg.style.transformOrigin = 'center';
+        modalImg.style.transform = 'scale(1)';
+    });
+
     // Manejador para abrir el modal
     document.querySelectorAll('.galeria-grid img, .product-card img, .hero-img').forEach(img => {
         img.addEventListener('click', () => {
+            const filename = decodeURIComponent(img.src.split('/').pop());
+            const info = productInfo[filename];
             const card = img.closest('.product-card');
             
-            if (card) {
+            if (info) {
+                // Si tenemos la info exacta del producto en el diccionario
+                modalTitle.textContent = info.title;
+                modalPrice.textContent = info.price;
+                modalDesc.textContent = info.desc;
+            } else if (card) {
                 // Si la imagen está en una tarjeta de producto, copiamos su info
                 modalTitle.textContent = card.querySelector('h3').textContent;
                 modalPrice.textContent = card.querySelector('.price').textContent;
                 modalDesc.textContent = card.querySelectorAll('p')[1].textContent;
             } else {
-                // Si es de la galería
+                // Info por defecto para otras fotos de la galería
                 modalTitle.textContent = "¡Delicioso Antojo!";
                 modalPrice.textContent = "Consulta nuestro menú";
-                modalDesc.textContent = "Hecho con los mejores ingredientes en PJ Strawberries. ¡Ven a probarlo!";
+                modalDesc.textContent = "Hecho con los mejores ingredientes en PJ Strawberries. ¡Ven a probarlo y vive la experiencia!";
             }
             
             modalImg.src = img.src;
@@ -86,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = () => {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
+        modalImg.style.transform = 'scale(1)'; // Resetea el zoom al cerrar
     };
 
     closeBtn.addEventListener('click', closeModal);
