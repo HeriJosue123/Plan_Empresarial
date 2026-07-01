@@ -52,15 +52,24 @@ body {
     box-shadow: 0 4px 30px rgba(128, 0, 32, 0.08);
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--primary-color);
-    letter-spacing: -1px;
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
-.logo span {
-    color: var(--text-color);
+.logo-img {
+    height: 60px; /* Tamaño adecuado para la barra de navegación */
+    width: auto;
+    border-radius: 8px;
+    transform: perspective(600px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.logo-img:hover {
+    transform: perspective(600px) rotateX(0deg) rotateY(0deg) scale(1.05) translateY(-2px);
+    box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .nav-links {
