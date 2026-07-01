@@ -66,6 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Promoción Especial',
             price: 'Consulta en local',
             desc: 'Aprovecha nuestras deliciosas promociones y combos. ¡Frescura y sabor que te encantarán!'
+        },
+        'choco_loco.jpeg': {
+            title: 'Choco Loco',
+            price: 'Desde $1.25',
+            desc: 'Dulce, divertido y espectacular. El postre perfecto para quitarte ese antojo de media tarde con toda la variedad que te gusta.'
+        },
+        'menu.jpeg': {
+            title: 'Nuestro Menú',
+            price: 'Variedad de Opciones',
+            desc: '¡Conoce todos nuestros sabores y opciones para que endulces o le des un toque picosito a tu día! Pregunta por tu favorito.'
         }
     };
 
