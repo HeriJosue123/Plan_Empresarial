@@ -151,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '7.jpeg': { title: 'Chamoyada Clásica', price: '$2.25', desc: 'La clásica bebida refrescante que mezcla lo dulce del hielo frutal con lo acidito del chamoy.' },
         '8.jpeg': { title: 'Chamoyada Frutal', price: '$2.75', desc: 'Trocitos de fruta natural ahogados en una deliciosa y picosita chamoyada fría.' },
         '9.jpeg': { title: 'Chamoyada Mix', price: '$3.00', desc: 'Una explosión de sabores combinados. Perfecta para combatir el calor con estilo.' },
-        '13.jpeg': { title: 'Bebida con Chamoy', price: '$2.50', desc: 'Fresca, dulce y con el toque exacto de chamoy que te hace querer más.' },
         
         '4.jpeg': { title: 'Pinchos de Fruta', price: '$1.50', desc: 'Rica fruta fresca de temporada bañada en chocolate o chamoy. Ideal para el antojo rápido.' },
         
