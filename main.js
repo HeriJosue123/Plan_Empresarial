@@ -26,6 +26,57 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
     });
 
+    // SPA Navigation Logic
+    const pageSections = document.querySelectorAll('.page-section');
+    const navItems = document.querySelectorAll('.nav-links a, .logo-link, .cta-button, .promo-btn');
+
+    function navigateTo(targetId) {
+        // Remove active from all
+        pageSections.forEach(section => section.classList.remove('active'));
+        
+        // Add active to target
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        } 
+        
+        if (targetId === 'hero') {
+            document.getElementById('hero').classList.add('active');
+            const promo = document.querySelector('.promociones');
+            if(promo) promo.classList.add('active');
+        }
+
+        // Close mobile menu if open
+        if (window.innerWidth <= 768 && navLinks.style.display === 'flex') {
+            navLinks.style.display = 'none';
+        }
+
+        window.scrollTo(0, 0);
+    }
+
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            const href = item.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                
+                // If they click on "Menú" or "Ver Nuestro Menú" (#productos)
+                // We show #productos, and optionally could show #galeria. For now just #productos.
+                // Wait, if they click "Ver Nuestro Menú", maybe we should show the whole gallery page?
+                // The user said "al darle ver menu me mande a los prodcutps pero no bajar y bajar".
+                // I will navigate to #productos.
+                if (targetId === 'productos' || targetId === 'galeria') {
+                    // Let's make "Menú" and "Galería" both show the products and gallery sections.
+                    // Or since we have two sections, just show the specific one. 
+                    navigateTo(targetId);
+                } else {
+                    navigateTo(targetId);
+                }
+            }
+        });
+    });
+
     // Scroll Animations
     const observerOptions = {
         threshold: 0.1,
