@@ -48,23 +48,21 @@ body {
 
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 1.5rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    padding: 1.5rem 5%;
+    background: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
     z-index: 1000;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(128, 0, 32, 0.1);
 }
 
 .navbar.scrolled {
     padding: 1rem 5%;
-    box-shadow: 0 4px 30px rgba(128, 0, 32, 0.08);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 .logo-link {
@@ -77,16 +75,16 @@ body {
 .logo-text {
     font-size: 1.8rem;
     font-weight: 900;
-    color: var(--primary-color);
-    letter-spacing: -1px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
 }
 
 .logo-img {
-    height: 85px; /* Un poco más grande */
+    height: 70px;
     width: auto;
-    border-radius: 12px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.3s;
     animation: floatingLogo 3s ease-in-out infinite; /* Efecto flotante */
 }
@@ -111,7 +109,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: white;
     font-weight: 600;
     font-size: 1.1rem;
     position: relative;
@@ -119,7 +117,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: #ffb3b3;
 }
 
 .nav-links a::after {
@@ -127,7 +125,7 @@ body {
     position: absolute;
     width: 0;
     height: 3px;
-    background: var(--primary-color);
+    background: white;
     bottom: -5px;
     left: 0;
     transition: width 0.3s ease;
@@ -150,7 +148,7 @@ body {
 .menu-btn span {
     width: 25px;
     height: 3px;
-    background: var(--primary-color);
+    background: white;
     border-radius: 3px;
 }
 
