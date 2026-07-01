@@ -26,6 +26,49 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
     });
 
+    // Hero Slider Logic
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    
+    if (slides.length > 0) {
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000); // Cambia cada 4 segundos
+    }
+
+    // Gallery Filters Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.filterable-gallery img');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+            
+            const filterValue = btn.getAttribute('data-filter');
+            
+            galleryItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.classList.remove('hide');
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.classList.add('hide');
+                    }, 400); // Wait for transition
+                }
+            });
+        });
+    });
+
     // SPA Navigation Logic
     const pageSections = document.querySelectorAll('.page-section');
     const navItems = document.querySelectorAll('.nav-links a, .logo-link, .cta-button, .promo-btn');
@@ -103,31 +146,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Información de Productos (Catálogo)
     const productInfo = {
-        '3.jpeg': {
-            title: 'Mangoneada Exótica',
-            price: '$2.50',
-            desc: '¡DULCE, PICOSITA Y REFRESCANTE! El antojo que te enamora. Mango fresco y natural con chamoy, chile y limón. Hielo raspado bien frío. El balance perfecto de dulce y picosito. ¡Una explosión de sabor!'
-        },
-        'WhatsApp Image 2026-06-30 at 7.03.50 PM.jpeg': {
-            title: 'Fresas con Crema / Frappé de Oreo',
-            price: '¡Delicioso!',
-            desc: '¡Delicioso, cremoso y refrescante! El antojo perfecto en cada sorbo. Galletas Oreo crujientes, crema batida suave y deliciosa, chocolate en cada sorbo y fresas frescas naturales. ¡No podrás resistirte!'
-        },
-        'WhatsApp Image 2026-06-30 at 7.03.51 PM.jpeg': {
-            title: 'Promoción Especial',
-            price: 'Consulta en local',
-            desc: 'Aprovecha nuestras deliciosas promociones y combos. ¡Frescura y sabor que te encantarán!'
-        },
-        'ChocoLoco2.jpeg': {
-            title: 'Choco Loco',
-            price: 'Desde $1.25',
-            desc: 'Dulce, divertido y espectacular. El postre perfecto para quitarte ese antojo de media tarde con toda la variedad que te gusta.'
-        },
-        'menu.jpeg': {
-            title: 'Nuestro Menú',
-            price: 'Variedad de Opciones',
-            desc: '¡Conoce todos nuestros sabores y opciones para que endulces o le des un toque picosito a tu día! Pregunta por tu favorito.'
-        }
+        '3.jpeg': { title: 'Mangoneada Exótica', price: '$2.50', desc: '¡DULCE, PICOSITA Y REFRESCANTE! El antojo que te enamora. Mango fresco y natural con chamoy, chile y limón.' },
+        '17.jpeg': { title: 'Mangoneada Especial', price: '$3.00', desc: 'Nuestra especialidad de mango con más chamoy y dulces picantes para doble diversión.' },
+        '7.jpeg': { title: 'Chamoyada Clásica', price: '$2.25', desc: 'La clásica bebida refrescante que mezcla lo dulce del hielo frutal con lo acidito del chamoy.' },
+        '8.jpeg': { title: 'Chamoyada Frutal', price: '$2.75', desc: 'Trocitos de fruta natural ahogados en una deliciosa y picosita chamoyada fría.' },
+        '9.jpeg': { title: 'Chamoyada Mix', price: '$3.00', desc: 'Una explosión de sabores combinados. Perfecta para combatir el calor con estilo.' },
+        '13.jpeg': { title: 'Bebida con Chamoy', price: '$2.50', desc: 'Fresca, dulce y con el toque exacto de chamoy que te hace querer más.' },
+        
+        '4.jpeg': { title: 'Pinchos de Fruta', price: '$1.50', desc: 'Rica fruta fresca de temporada bañada en chocolate o chamoy. Ideal para el antojo rápido.' },
+        
+        '18.jpeg': { title: 'Fresas con Crema', price: '$2.50', desc: 'Fresas dulces, crema receta de la casa, y el toque perfecto de amor en cada cucharada.' },
+        '14.jpeg': { title: 'Postre Delicioso', price: '$3.00', desc: 'Un postre cremosito para esos momentos donde solo necesitas consentirte un rato.' },
+        '15.jpeg': { title: 'Postre Especial', price: '$2.75', desc: 'Dulzura inigualable. Pregunta por este especial en nuestro local.' },
+        '16.jpeg': { title: 'Postre Fresas', price: '$3.25', desc: 'Las mejores fresas con extra ingredientes y toppings a tu elección.' },
+        
+        'WhatsApp Image 2026-06-30 at 7.03.50 PM.jpeg': { title: 'Frappé de Oreo', price: '$3.00', desc: '¡Delicioso, cremoso y refrescante! Galletas Oreo crujientes y crema batida.' },
+        'WhatsApp Image 2026-06-30 at 7.03.51 PM.jpeg': { title: 'Fresada', price: '$2.50', desc: 'Una bebida dulce y rosa con todo el sabor natural de la fresa y leche condensada.' },
+        
+        'ChocoLoco2.jpeg': { title: 'Choco Loco', price: 'Desde $1.25', desc: 'Dulce, divertido y espectacular. El postre perfecto bañado en chocolate y gomitas.' },
+        'menu.jpeg': { title: 'Nuestro Menú', price: 'Variedad de Opciones', desc: '¡Conoce todos nuestros sabores y opciones para que endulces o le des un toque picosito a tu día!' },
+        
+        '19.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' },
+        '21.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' },
+        '23.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' },
+        '24.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' },
+        '25.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' }
     };
 
     // Lightbox / Modal Logic
