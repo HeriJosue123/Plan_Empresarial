@@ -519,11 +519,30 @@ body {
     box-shadow: 0 15px 25px rgba(220, 39, 67, 0.4);
 }
 
-.contacto-imagen img {
+.contacto-galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    align-content: center;
+}
+
+.contacto-galeria img {
     width: 100%;
-    height: auto;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(128, 0, 32, 0.15);
+    height: 100%;
+    min-height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(128, 0, 32, 0.15);
+    transition: transform 0.3s;
+}
+
+.contacto-galeria img:hover {
+    transform: scale(1.03);
+}
+
+.contacto-galeria img:nth-child(1) {
+    grid-column: 1 / -1;
+    min-height: 250px;
 }
 
 /* Footer */
