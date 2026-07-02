@@ -102,8 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // The user said "al darle ver menu me mande a los prodcutps pero no bajar y bajar".
                 // I will navigate to #productos.
                 if (targetId === 'productos' || targetId === 'galeria') {
-                    // Let's make "Menú" and "Galería" both show the products and gallery sections.
-                    // Or since we have two sections, just show the specific one. 
                     navigateTo(targetId);
                 } else {
                     navigateTo(targetId);
@@ -111,6 +109,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Restaurar sección si hay un hash en la URL al recargar la página
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        if (document.getElementById(hash)) {
+            // Un pequeño timeout ayuda a que el navegador no sobreescriba el scroll
+            setTimeout(() => {
+                navigateTo(hash);
+            }, 10);
+        }
+    }
 
     // Scroll Animations
     const observerOptions = {
