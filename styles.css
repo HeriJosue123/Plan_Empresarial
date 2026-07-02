@@ -970,6 +970,7 @@ html[data-active-section="contacto"] #contacto {
 @media (max-width: 768px) {
     .modal-body {
         flex-direction: column;
+        gap: 1rem;
     }
     .modal-content {
         padding: 1.5rem;
@@ -977,7 +978,19 @@ html[data-active-section="contacto"] #contacto {
         overflow-y: auto;
     }
     .modal-img-container img {
-        max-height: 40vh;
+        max-height: 25vh;
+    }
+    .modal-info h3 {
+        font-size: 1.7rem;
+        margin-bottom: 0.5rem;
+    }
+    .modal-info .price {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    .modal-info p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 }
 
