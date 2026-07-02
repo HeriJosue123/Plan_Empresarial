@@ -357,7 +357,8 @@ html[data-active-section="contacto"] #contacto {
 }
 
 .menu-principal-img {
-    max-width: 100%;
+    max-width: 650px;
+    width: 100%;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(128, 0, 32, 0.15);
