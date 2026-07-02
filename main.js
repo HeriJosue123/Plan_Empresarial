@@ -227,16 +227,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalDesc.textContent = "Hecho con los mejores ingredientes en PJ Strawberries. ¡Ven a probarlo y vive la experiencia!";
             }
             
-            // Mensaje para WhatsApp — emojis con String.fromCodePoint (100% compatible con todos los dispositivos y navegadores)
+            // Mensaje WhatsApp con emojis como pares sustitutos UTF-16 (\uXXXX) — matemáticas puras, sin depender del encoding del archivo
             const phone = "50369690072";
             const titleText = modalTitle.textContent;
             const priceText = modalPrice.textContent;
 
-            // Emojis construidos desde sus puntos de código — no depende de cómo esté guardado el archivo
-            const emoji_fresa    = String.fromCodePoint(0x1F353); // 🍓
-            const emoji_bolsa    = String.fromCodePoint(0x1F6D2); // 🛒
-            const emoji_libreta  = String.fromCodePoint(0x1F4DD); // 📝
-            const emoji_estrella = String.fromCodePoint(0x2B50);  // ⭐
+            // Cada emoji calculado con sus pares sustitutos UTF-16 (fórmula estándar Unicode)
+            // U+1F353 🍓  → High: \uD83C  Low: \uDF53
+            const emoji_fresa    = "\uD83C\uDF53";
+            // U+1F6D2 🛒  → High: \uD83D  Low: \uDED2
+            const emoji_bolsa    = "\uD83D\uDED2";
+            // U+1F4DD 📝  → High: \uD83D  Low: \uDCDD
+            const emoji_libreta  = "\uD83D\uDCDD";
+            // U+2B50  ⭐  → BMP (no necesita par sustituto)
+            const emoji_estrella = "\u2B50";
 
             let textoPedido = "\u00A1Hola PJ Strawberries! " + emoji_fresa + "\n\n";
             textoPedido += "Me interesa pedir: *" + titleText + "*";
