@@ -15,15 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     menuBtn.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '70px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = 'white';
-        navLinks.style.padding = '1rem';
-        navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
+        navLinks.classList.toggle('active');
     });
 
     // Hero Slider Logic
@@ -90,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Close mobile menu if open
-        if (window.innerWidth <= 768 && navLinks.style.display === 'flex') {
-            navLinks.style.display = 'none';
+        if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
         }
 
         window.scrollTo(0, 0);
