@@ -806,11 +806,20 @@ body {
     .menu-btn {
         display: flex;
     }
+    .navbar {
+        padding: 0.5rem 5%;
+    }
+    .logo-img {
+        height: 50px;
+    }
+    .logo-text {
+        font-size: 1.4rem;
+    }
     .hero-slide {
         flex-direction: column;
         text-align: center;
         justify-content: center;
-        padding-top: 100px;
+        padding-top: 110px;
     }
     .hero-content {
         max-width: 100%;
