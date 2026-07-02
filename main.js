@@ -70,6 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update data attribute for CSS
         document.documentElement.setAttribute('data-active-section', targetId);
 
+        // Update active nav link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${targetId}`) {
+                link.classList.add('active');
+            }
+        });
+
         // Remove active from all
         pageSections.forEach(section => section.classList.remove('active'));
         

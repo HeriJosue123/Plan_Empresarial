@@ -166,7 +166,8 @@ html[data-active-section="contacto"] #contacto {
     border-radius: 2px;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
