@@ -331,7 +331,7 @@ html[data-active-section="contacto"] #contacto {
 
 /* Productos Section */
 .productos {
-    padding: 6rem 5%;
+    padding: 160px 5% 6rem;
     background: var(--secondary-color);
 }
 
@@ -448,7 +448,7 @@ html[data-active-section="contacto"] #contacto {
 
 /* Galería Section */
 .galeria {
-    padding: 6rem 5%;
+    padding: 160px 5% 6rem;
     background: var(--secondary-color);
 }
 .galeria-desc {
