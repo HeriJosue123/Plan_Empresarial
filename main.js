@@ -203,8 +203,30 @@ document.addEventListener('DOMContentLoaded', () => {
         modalImg.style.transform = 'scale(1)';
     });
 
+    // Lightbox simple para la imagen del menú (solo imagen, sin panel de producto)
+    const menuImg = document.querySelector('.menu-principal-img');
+    if (menuImg) {
+        menuImg.addEventListener('click', () => {
+            const overlay = document.createElement('div');
+            overlay.id = 'menu-lightbox';
+            overlay.innerHTML = `
+                <div id="menu-lightbox-inner">
+                    <button id="menu-lightbox-close">&times;</button>
+                    <img src="${menuImg.src}" alt="Men\u00FA PJ Strawberries">
+                </div>`;
+            document.body.appendChild(overlay);
+            document.body.style.overflow = 'hidden';
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay || e.target.id === 'menu-lightbox-close') {
+                    overlay.remove();
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    }
+
     // Manejador para abrir el modal
-    document.querySelectorAll('.galeria-grid img, .product-card img, .hero-img, .menu-principal-img').forEach(img => {
+    document.querySelectorAll('.galeria-grid img, .product-card img, .hero-img').forEach(img => {
         img.addEventListener('click', () => {
             const filename = decodeURIComponent(img.src.split('/').pop());
             const info = productInfo[filename];
