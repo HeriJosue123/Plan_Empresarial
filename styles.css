@@ -383,6 +383,7 @@ html[data-active-section="contacto"] #contacto {
 }
 
 .featured-menu-text {
+    display: none; /* Ocultar en móviles */
     text-align: center;
     max-width: 600px;
     background: white;
@@ -455,6 +456,7 @@ html[data-active-section="contacto"] #contacto {
         margin: 0 auto 4rem auto;
     }
     .featured-menu-text {
+        display: block; /* Mostrar en PC */
         text-align: left;
         flex: 1.2;
     }
