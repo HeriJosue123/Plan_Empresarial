@@ -652,6 +652,24 @@ body {
     text-align: center;
 }
 
+.developer-credit {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.dev-link {
+    color: #ffb3b3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.dev-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 /* Modal (Lightbox) */
 .modal {
     display: none;
