@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Manejador para abrir el modal
-    document.querySelectorAll('.galeria-grid img, .product-card img, .hero-img').forEach(img => {
+    document.querySelectorAll('.galeria-grid img, .product-card img, .hero-img, .menu-principal-img').forEach(img => {
         img.addEventListener('click', () => {
             const filename = decodeURIComponent(img.src.split('/').pop());
             const info = productInfo[filename];

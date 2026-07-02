@@ -483,8 +483,9 @@ html[data-active-section="contacto"] #contacto {
 }
 
 .menu-principal-img:hover {
-    transform: scale(1.6);
+    transform: scale(1.03);
     box-shadow: 0 30px 70px rgba(128, 0, 32, 0.35);
+    cursor: zoom-in;
 }
 
 .featured-menu-image-container {
