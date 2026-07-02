@@ -913,4 +913,14 @@ body {
     .featured-menu {
         margin-bottom: 2rem;
     }
+    
+    /* 2-Column Gallery Grid for Mobile */
+    .galeria-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    .galeria-grid img {
+        height: 140px;
+        border-radius: 12px;
+    }
 }
