@@ -449,16 +449,16 @@ html[data-active-section="contacto"] #contacto {
 @media (min-width: 900px) {
     .featured-menu {
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        gap: 5rem;
-        max-width: 1100px;
+        gap: 3rem;
+        max-width: 100%;
         margin: 0 auto 4rem auto;
     }
     .featured-menu-text {
         display: block; /* Mostrar en PC */
         text-align: left;
-        flex: 1.2;
+        flex: 0 1 550px;
     }
     .menu-tags {
         justify-content: flex-start;
