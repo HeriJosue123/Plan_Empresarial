@@ -227,30 +227,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalDesc.textContent = "Hecho con los mejores ingredientes en PJ Strawberries. ¡Ven a probarlo y vive la experiencia!";
             }
             
-            // Mensaje WhatsApp con emojis como pares sustitutos UTF-16 (\uXXXX) — matemáticas puras, sin depender del encoding del archivo
+            // Mensaje WhatsApp profesional — sin emojis para garantizar compatibilidad total en todos los dispositivos
             const phone = "50369690072";
             const titleText = modalTitle.textContent;
             const priceText = modalPrice.textContent;
 
-            // Cada emoji calculado con sus pares sustitutos UTF-16 (fórmula estándar Unicode)
-            // U+1F353 🍓  → High: \uD83C  Low: \uDF53
-            const emoji_fresa    = "\uD83C\uDF53";
-            // U+1F6D2 🛒  → High: \uD83D  Low: \uDED2
-            const emoji_bolsa    = "\uD83D\uDED2";
-            // U+1F4DD 📝  → High: \uD83D  Low: \uDCDD
-            const emoji_libreta  = "\uD83D\uDCDD";
-            // U+2B50  ⭐  → BMP (no necesita par sustituto)
-            const emoji_estrella = "\u2B50";
-
-            let textoPedido = "\u00A1Hola PJ Strawberries! " + emoji_fresa + "\n\n";
-            textoPedido += "Me interesa pedir: *" + titleText + "*";
+            let textoPedido = "\u00A1Hola PJ Strawberries!\n";
+            textoPedido += "----------------------------\n";
+            textoPedido += "*Quiero hacer un pedido:*\n\n";
+            textoPedido += "*Producto:* " + titleText + "\n";
 
             if (priceText && !priceText.includes("Consulta") && !priceText.includes("Variedad") && !priceText.includes("Invaluable")) {
-                textoPedido += " (" + priceText + ") " + emoji_bolsa;
+                textoPedido += "*Precio:* " + priceText + "\n";
             }
 
-            textoPedido += "\n\n\u00BFMe podr\u00EDan dar m\u00E1s informaci\u00F3n para hacer mi pedido? " + emoji_libreta;
-            textoPedido += "\n\n" + emoji_estrella + " Gracias!";
+            textoPedido += "\n\u00BFMe pueden dar m\u00E1s informaci\u00F3n para confirmar mi pedido?\n";
+            textoPedido += "\n\u00A1Gracias!";
 
             orderBtn.href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(textoPedido);
             orderBtn.target = "_blank";
