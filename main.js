@@ -227,31 +227,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalDesc.textContent = "Hecho con los mejores ingredientes en PJ Strawberries. ¡Ven a probarlo y vive la experiencia!";
             }
             
-            // Generar mensaje automático para WhatsApp con URL Encoding directo (100% compatible en todos los móviles)
+            // Mensaje para WhatsApp — emojis con String.fromCodePoint (100% compatible con todos los dispositivos y navegadores)
             const phone = "50369690072";
-            const currentTitle = encodeURIComponent(modalTitle.textContent);
-            const currentPrice = modalPrice.textContent;
-            
-            // Emojis codificados en URL para evitar los signos de interrogación ()
-            const strawberry = "%F0%9F%8D%93";
-            const bag = "%F0%9F%9B%8D%EF%B8%8F";
-            const notepad = "%F0%9F%93%9D";
-            
-            // Textos especiales codificados (¡, ¿, á, ó, í)
-            const hola = "%C2%A1Hola";
-            const openQuestion = "%C2%BFMe";
-            const masInfo = "m%C3%A1s%20informaci%C3%B3n";
-            
-            let waMessage = `${hola}%20PJ%20Strawberries!%20${strawberry}%0A%0A`;
-            waMessage += `Me%20interesa%20pedir%3A%20*${currentTitle}*`;
-            
-            if (currentPrice && !currentPrice.includes("Consulta") && !currentPrice.includes("Variedad") && !currentPrice.includes("Invaluable")) {
-                waMessage += `%20(${encodeURIComponent(currentPrice)})`;
+            const titleText = modalTitle.textContent;
+            const priceText = modalPrice.textContent;
+
+            // Emojis construidos desde sus puntos de código — no depende de cómo esté guardado el archivo
+            const emoji_fresa    = String.fromCodePoint(0x1F353); // 🍓
+            const emoji_bolsa    = String.fromCodePoint(0x1F6D2); // 🛒
+            const emoji_libreta  = String.fromCodePoint(0x1F4DD); // 📝
+            const emoji_estrella = String.fromCodePoint(0x2B50);  // ⭐
+
+            let textoPedido = "\u00A1Hola PJ Strawberries! " + emoji_fresa + "\n\n";
+            textoPedido += "Me interesa pedir: *" + titleText + "*";
+
+            if (priceText && !priceText.includes("Consulta") && !priceText.includes("Variedad") && !priceText.includes("Invaluable")) {
+                textoPedido += " (" + priceText + ") " + emoji_bolsa;
             }
-            waMessage += `%20${bag}%0A%0A`;
-            waMessage += `${openQuestion}%20podr%C3%ADan%20dar%20${masInfo}%20para%20hacer%20mi%20pedido%3F%20${notepad}`;
-            
-            orderBtn.href = `https://wa.me/${phone}?text=${waMessage}`;
+
+            textoPedido += "\n\n\u00BFMe podr\u00EDan dar m\u00E1s informaci\u00F3n para hacer mi pedido? " + emoji_libreta;
+            textoPedido += "\n\n" + emoji_estrella + " Gracias!";
+
+            orderBtn.href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(textoPedido);
             orderBtn.target = "_blank";
             
             modalImg.src = img.src;
