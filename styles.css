@@ -950,6 +950,9 @@ html[data-active-section="contacto"] #contacto {
         width: 100%;
     }
     .contacto-imagen img {
+        max-width: 85%;
+        margin: 0 auto;
+        display: block;
         border-radius: 20px;
     }
 }
