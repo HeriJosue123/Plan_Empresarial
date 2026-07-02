@@ -960,6 +960,10 @@ html[data-active-section="contacto"] #contacto {
     .contacto-texto h2 {
         font-size: 2rem;
     }
+    .contacto-title-mobile {
+        font-size: clamp(1.5rem, 7vw, 2.5rem) !important;
+        white-space: nowrap;
+    }
     .contacto-section {
         padding-bottom: 90px;
     }
