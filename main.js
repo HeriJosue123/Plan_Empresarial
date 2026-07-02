@@ -91,6 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (!isPageLoad) {
+            // Actualizar el hash en la URL SIN saltar la pantalla
+            // Esto es lo que permite que al recargar, el navegador recuerde en qué sección estabas
+            history.pushState(null, null, '#' + targetId);
             window.scrollTo(0, 0);
         }
     }
@@ -101,47 +104,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (href && href.startsWith('#')) {
                 e.preventDefault();
                 const targetId = href.substring(1);
-                
-                // If they click on "Menú" or "Ver Nuestro Menú" (#productos)
-                // We show #productos, and optionally could show #galeria. For now just #productos.
-                // Wait, if they click "Ver Nuestro Menú", maybe we should show the whole gallery page?
-                // The user said "al darle ver menu me mande a los prodcutps pero no bajar y bajar".
-                // I will navigate to #productos.
-                if (targetId === 'productos' || targetId === 'galeria') {
-                    navigateTo(targetId);
-                } else {
-                    navigateTo(targetId);
-                }
+                navigateTo(targetId);
             }
         });
     });
 
-    // Manejar la restauración del scroll usando sessionStorage como respaldo adicional
-    if (window.location.hash) {
-        const hash = window.location.hash.substring(1);
-        if (document.getElementById(hash)) {
-            navigateTo(hash, true);
-            
-            // Native scroll restoration should work now thanks to the inline script, 
-            // but we provide a gentle fallback if needed.
-            const savedHash = sessionStorage.getItem('lastHash');
-            if (savedHash === window.location.hash) {
-                const scrollPos = sessionStorage.getItem('scrollPos');
-                if (scrollPos) {
-                    setTimeout(() => window.scrollTo(0, parseInt(scrollPos, 10)), 100);
-                }
-            }
-        }
+    // Al cargar la página, leer el hash de la URL y mostrar la sección correcta
+    const initialHash = window.location.hash.substring(1);
+    if (initialHash && document.getElementById(initialHash)) {
+        navigateTo(initialHash, true);
     } else {
-        // Si no hay hash, asegúrate de activar el hero
         navigateTo('hero', true);
     }
-
-    // Guardar la posición de scroll antes de que la página se recargue o se cierre
-    window.addEventListener('beforeunload', () => {
-        sessionStorage.setItem('scrollPos', window.scrollY);
-        sessionStorage.setItem('lastHash', window.location.hash || '#hero');
-    });
 
     // Scroll Animations
     const observerOptions = {
