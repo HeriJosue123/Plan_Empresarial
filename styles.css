@@ -25,17 +25,35 @@
 }
 
 body {
-    font-family: var(--font-main);
-    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
     color: var(--text-color);
+    background-color: var(--bg-color);
     overflow-x: hidden;
+}
+
+/* Marca de agua global */
+body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 550px;
+    height: 80vh;
+    background-image: url('assets/images/logo.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05;
+    z-index: 9999;
+    pointer-events: none;
 }
 
 /* SPA Navigation System */
 .page-section {
     display: none;
     animation: fadeInPage 0.4s ease-in-out;
-    padding-top: 140px;
     padding-bottom: 60px;
 }
 
@@ -332,7 +350,7 @@ html[data-active-section="contacto"] #contacto {
 
 /* Productos Section */
 .productos {
-    padding: 160px 5% 6rem;
+    padding: 0 5% 6rem;
     background: var(--secondary-color);
 }
 
@@ -453,7 +471,7 @@ html[data-active-section="contacto"] #contacto {
 
 /* Galería Section */
 .galeria {
-    padding: 160px 5% 6rem;
+    padding: 0 5% 6rem;
     background: var(--secondary-color);
 }
 .galeria-desc {
