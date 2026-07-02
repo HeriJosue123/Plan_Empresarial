@@ -231,11 +231,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const phone = "50369690072";
             const currentTitle = modalTitle.textContent;
             const currentPrice = modalPrice.textContent;
-            let waMessage = `¡Hola PJ Strawberries! 🍓\nMe interesa pedir: *${currentTitle}*`;
-            if (currentPrice && currentPrice !== "Consulta nuestro menú" && currentPrice !== "Variedad de Opciones" && currentPrice !== "Invaluable") {
+            
+            // Emojis y caracteres especiales seguros (Unicode)
+            const strawberry = "\u{1F353}";
+            const bag = "\u{1F6CD}\u{FE0F}";
+            const notepad = "\u{1F4DD}";
+            
+            let waMessage = `\u00A1Hola PJ Strawberries! ${strawberry}\n\n`;
+            waMessage += `Me interesa pedir: *${currentTitle}*`;
+            
+            if (currentPrice && currentPrice !== "Consulta nuestro men\u00FA" && currentPrice !== "Variedad de Opciones" && currentPrice !== "Invaluable") {
                 waMessage += ` (${currentPrice})`;
             }
-            waMessage += `.\n¿Me podrían dar más información para hacer mi pedido?`;
+            waMessage += ` ${bag}\n\n`;
+            waMessage += `\u00BFMe podr\u00EDan dar m\u00E1s informaci\u00F3n para hacer mi pedido? ${notepad}`;
             
             orderBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(waMessage)}`;
             orderBtn.target = "_blank";
