@@ -478,6 +478,18 @@ html[data-active-section="contacto"] #contacto {
     box-shadow: 0 15px 35px rgba(128, 0, 32, 0.15);
     display: block;
     margin: 0 auto;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: zoom-in;
+}
+
+.menu-principal-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 25px 55px rgba(128, 0, 32, 0.28);
+}
+
+.featured-menu-image-container {
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .cards-container {
