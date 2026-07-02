@@ -100,7 +100,7 @@ html[data-active-section="contacto"] #contacto {
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    animation: waveEffect 3s linear infinite;
+    animation: waveEffect 5s linear infinite;
 }
 
 @keyframes waveEffect {
