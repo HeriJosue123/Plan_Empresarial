@@ -227,6 +227,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalDesc.textContent = "Hecho con los mejores ingredientes en PJ Strawberries. ¡Ven a probarlo y vive la experiencia!";
             }
             
+            // Generar mensaje automático para WhatsApp
+            const phone = "50369690072";
+            const currentTitle = modalTitle.textContent;
+            const currentPrice = modalPrice.textContent;
+            let waMessage = `¡Hola PJ Strawberries! 🍓\nMe interesa pedir: *${currentTitle}*`;
+            if (currentPrice && currentPrice !== "Consulta nuestro menú" && currentPrice !== "Variedad de Opciones" && currentPrice !== "Invaluable") {
+                waMessage += ` (${currentPrice})`;
+            }
+            waMessage += `.\n¿Me podrían dar más información para hacer mi pedido?`;
+            
+            orderBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(waMessage)}`;
+            orderBtn.target = "_blank";
+            
             modalImg.src = img.src;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Bloquear scroll del fondo
