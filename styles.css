@@ -483,8 +483,8 @@ html[data-active-section="contacto"] #contacto {
 }
 
 .menu-principal-img:hover {
-    transform: scale(1.08);
-    box-shadow: 0 25px 55px rgba(128, 0, 32, 0.28);
+    transform: scale(1.6);
+    box-shadow: 0 30px 70px rgba(128, 0, 32, 0.35);
 }
 
 .featured-menu-image-container {
