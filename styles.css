@@ -374,9 +374,51 @@ html[data-active-section="contacto"] #contacto {
 }
 
 .featured-menu {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     margin-bottom: 4rem;
     padding: 0 1rem;
+}
+
+.featured-menu-text {
+    text-align: center;
+    max-width: 600px;
+}
+
+.featured-menu-text h3 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.featured-menu-text p {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 900px) {
+    .featured-menu {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        max-width: 1000px;
+        margin: 0 auto 4rem auto;
+    }
+    .featured-menu-text {
+        text-align: left;
+        flex: 1;
+    }
+    .featured-menu-image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .menu-principal-img {
