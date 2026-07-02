@@ -294,6 +294,28 @@ body {
     font-weight: 900;
 }
 
+.subsection-title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    text-align: left;
+    margin-bottom: 2.5rem;
+    margin-top: 4rem;
+    padding: 0 1rem;
+}
+
+.featured-menu {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+}
+
+.menu-principal-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(128, 0, 32, 0.15);
+}
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -875,5 +897,20 @@ body {
         display: -webkit-box;
         -webkit-line-clamp: 4; /* Limit description to 4 lines to avoid super tall cards */
         -webkit-box-orient: vertical;
+    }
+    
+    .subsection-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        margin-top: 2.5rem;
+        text-align: left;
+        padding: 0;
+    }
+    .menu-principal-img {
+        max-width: 85%;
+        border-radius: 12px;
+    }
+    .featured-menu {
+        margin-bottom: 2rem;
     }
 }
