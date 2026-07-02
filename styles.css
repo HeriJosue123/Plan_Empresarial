@@ -339,6 +339,8 @@ html[data-active-section="contacto"] #contacto {
     text-align: center;
     font-size: 2.8rem;
     margin-bottom: 4rem;
+    margin-top: 0;
+    padding-top: 120px;
     color: var(--primary-color);
     font-weight: 900;
 }
@@ -359,11 +361,13 @@ html[data-active-section="contacto"] #contacto {
 }
 
 .menu-principal-img {
-    max-width: 650px;
+    max-width: 480px;
     width: 100%;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(128, 0, 32, 0.15);
+    display: block;
+    margin: 0 auto;
 }
 
 .cards-container {
