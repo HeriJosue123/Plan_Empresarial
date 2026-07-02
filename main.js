@@ -113,13 +113,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Restaurar sección si hay un hash en la URL al recargar la página
+    // Manejar la restauración del scroll usando sessionStorage para evitar problemas del navegador
     if (window.location.hash) {
         const hash = window.location.hash.substring(1);
         if (document.getElementById(hash)) {
             navigateTo(hash, true);
+            
+            // Si el hash coincide con el último visitado, restauramos el scroll
+            const savedHash = sessionStorage.getItem('lastHash');
+            if (savedHash === window.location.hash) {
+                const scrollPos = sessionStorage.getItem('scrollPos');
+                if (scrollPos) {
+                    // Darle tiempo al navegador para renderizar la sección antes de hacer scroll
+                    setTimeout(() => {
+                        window.scrollTo(0, parseInt(scrollPos, 10));
+                    }, 50);
+                }
+            }
         }
+    } else {
+        // Si no hay hash, asegúrate de activar el hero
+        navigateTo('hero', true);
     }
+
+    // Guardar la posición de scroll antes de que la página se recargue o se cierre
+    window.addEventListener('beforeunload', () => {
+        sessionStorage.setItem('scrollPos', window.scrollY);
+        sessionStorage.setItem('lastHash', window.location.hash || '#hero');
+    });
 
     // Scroll Animations
     const observerOptions = {
