@@ -124,10 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (savedHash === window.location.hash) {
                 const scrollPos = sessionStorage.getItem('scrollPos');
                 if (scrollPos) {
-                    // Darle tiempo al navegador para renderizar la sección antes de hacer scroll
-                    setTimeout(() => {
-                        window.scrollTo(0, parseInt(scrollPos, 10));
-                    }, 50);
+                    // Hacer scroll varias veces para asegurar que se aplique 
+                    // incluso si las imágenes tardan en cargar y cambian el alto de la página
+                    const restore = () => window.scrollTo(0, parseInt(scrollPos, 10));
+                    setTimeout(restore, 50);
+                    setTimeout(restore, 300);
+                    setTimeout(restore, 800);
                 }
             }
         }
