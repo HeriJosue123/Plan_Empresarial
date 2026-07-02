@@ -227,26 +227,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalDesc.textContent = "Hecho con los mejores ingredientes en PJ Strawberries. ¡Ven a probarlo y vive la experiencia!";
             }
             
-            // Generar mensaje automático para WhatsApp
+            // Generar mensaje automático para WhatsApp con URL Encoding directo (100% compatible en todos los móviles)
             const phone = "50369690072";
-            const currentTitle = modalTitle.textContent;
+            const currentTitle = encodeURIComponent(modalTitle.textContent);
             const currentPrice = modalPrice.textContent;
             
-            // Emojis y caracteres especiales seguros (Unicode)
-            const strawberry = "\u{1F353}";
-            const bag = "\u{1F6CD}\u{FE0F}";
-            const notepad = "\u{1F4DD}";
+            // Emojis codificados en URL para evitar los signos de interrogación ()
+            const strawberry = "%F0%9F%8D%93";
+            const bag = "%F0%9F%9B%8D%EF%B8%8F";
+            const notepad = "%F0%9F%93%9D";
             
-            let waMessage = `\u00A1Hola PJ Strawberries! ${strawberry}\n\n`;
-            waMessage += `Me interesa pedir: *${currentTitle}*`;
+            // Textos especiales codificados (¡, ¿, á, ó, í)
+            const hola = "%C2%A1Hola";
+            const openQuestion = "%C2%BFMe";
+            const masInfo = "m%C3%A1s%20informaci%C3%B3n";
             
-            if (currentPrice && currentPrice !== "Consulta nuestro men\u00FA" && currentPrice !== "Variedad de Opciones" && currentPrice !== "Invaluable") {
-                waMessage += ` (${currentPrice})`;
+            let waMessage = `${hola}%20PJ%20Strawberries!%20${strawberry}%0A%0A`;
+            waMessage += `Me%20interesa%20pedir%3A%20*${currentTitle}*`;
+            
+            if (currentPrice && !currentPrice.includes("Consulta") && !currentPrice.includes("Variedad") && !currentPrice.includes("Invaluable")) {
+                waMessage += `%20(${encodeURIComponent(currentPrice)})`;
             }
-            waMessage += ` ${bag}\n\n`;
-            waMessage += `\u00BFMe podr\u00EDan dar m\u00E1s informaci\u00F3n para hacer mi pedido? ${notepad}`;
+            waMessage += `%20${bag}%0A%0A`;
+            waMessage += `${openQuestion}%20podr%C3%ADan%20dar%20${masInfo}%20para%20hacer%20mi%20pedido%3F%20${notepad}`;
             
-            orderBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(waMessage)}`;
+            orderBtn.href = `https://wa.me/${phone}?text=${waMessage}`;
             orderBtn.target = "_blank";
             
             modalImg.src = img.src;
