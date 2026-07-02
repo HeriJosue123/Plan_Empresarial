@@ -232,13 +232,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const titleText = modalTitle.textContent;
             const priceText = modalPrice.textContent;
 
-            let textoPedido = "\u00A1Hola PJ Strawberries!\n";
-            textoPedido += "----------------------------\n";
-            textoPedido += "*Quiero hacer un pedido:*\n\n";
-            textoPedido += "*Producto:* " + titleText + "\n";
+            let textoPedido = "\u00A1Hola PJ Strawberries!\n\n";
+            textoPedido += "Me interesa pedir: " + titleText + "\n";
 
             if (priceText && !priceText.includes("Consulta") && !priceText.includes("Variedad") && !priceText.includes("Invaluable")) {
-                textoPedido += "*Precio:* " + priceText + "\n";
+                textoPedido += "Precio: " + priceText + "\n";
             }
 
             textoPedido += "\n\u00BFMe pueden dar m\u00E1s informaci\u00F3n para confirmar mi pedido?\n";
