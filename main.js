@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageSections = document.querySelectorAll('.page-section');
     const navItems = document.querySelectorAll('.nav-links a, .logo-link, .cta-button, .promo-btn');
 
-    function navigateTo(targetId) {
+    function navigateTo(targetId, isPageLoad = false) {
         // Remove active from all
         pageSections.forEach(section => section.classList.remove('active'));
         
@@ -82,11 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Close mobile menu if open
-        if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+        const navLinks = document.querySelector('.nav-links');
+        if (window.innerWidth <= 768 && navLinks && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
         }
 
-        window.scrollTo(0, 0);
+        if (!isPageLoad) {
+            window.scrollTo(0, 0);
+        }
     }
 
     navItems.forEach(item => {
@@ -114,10 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.hash) {
         const hash = window.location.hash.substring(1);
         if (document.getElementById(hash)) {
-            // Un pequeño timeout ayuda a que el navegador no sobreescriba el scroll
-            setTimeout(() => {
-                navigateTo(hash);
-            }, 10);
+            navigateTo(hash, true);
         }
     }
 
