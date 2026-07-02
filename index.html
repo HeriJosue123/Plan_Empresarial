@@ -13,7 +13,16 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
+    <script>
+        // Previene el salto de scroll asegurando que la sección correcta se renderice primero
+        (function() {
+            var hash = window.location.hash.substring(1);
+            var validSections = ['hero', 'productos', 'galeria', 'contacto'];
+            var target = validSections.includes(hash) ? hash : 'hero';
+            document.documentElement.setAttribute('data-active-section', target);
+        })();
+    </script>
 </head>
 <body>
     <!-- Navbar -->
@@ -36,7 +45,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="hero" class="hero page-section active">
+    <header id="hero" class="hero page-section">
         <!-- Slide 1 -->
         <div class="hero-slide active">
             <div class="hero-content">

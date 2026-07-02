@@ -37,6 +37,15 @@ body {
     animation: fadeInPage 0.4s ease-in-out;
 }
 
+/* Controlled by data attribute on HTML tag */
+html[data-active-section="hero"] #hero,
+html[data-active-section="productos"] #productos,
+html[data-active-section="galeria"] #galeria,
+html[data-active-section="contacto"] #contacto {
+    display: block;
+}
+
+/* Fallback for JS transitions */
 .page-section.active {
     display: block;
 }

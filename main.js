@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-links a, .logo-link, .cta-button, .promo-btn');
 
     function navigateTo(targetId, isPageLoad = false) {
+        // Update data attribute for CSS
+        document.documentElement.setAttribute('data-active-section', targetId);
+
         // Remove active from all
         pageSections.forEach(section => section.classList.remove('active'));
         
@@ -113,23 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Manejar la restauración del scroll usando sessionStorage para evitar problemas del navegador
+    // Manejar la restauración del scroll usando sessionStorage como respaldo adicional
     if (window.location.hash) {
         const hash = window.location.hash.substring(1);
         if (document.getElementById(hash)) {
             navigateTo(hash, true);
             
-            // Si el hash coincide con el último visitado, restauramos el scroll
+            // Native scroll restoration should work now thanks to the inline script, 
+            // but we provide a gentle fallback if needed.
             const savedHash = sessionStorage.getItem('lastHash');
             if (savedHash === window.location.hash) {
                 const scrollPos = sessionStorage.getItem('scrollPos');
                 if (scrollPos) {
-                    // Hacer scroll varias veces para asegurar que se aplique 
-                    // incluso si las imágenes tardan en cargar y cambian el alto de la página
-                    const restore = () => window.scrollTo(0, parseInt(scrollPos, 10));
-                    setTimeout(restore, 50);
-                    setTimeout(restore, 300);
-                    setTimeout(restore, 800);
+                    setTimeout(() => window.scrollTo(0, parseInt(scrollPos, 10)), 100);
                 }
             }
         }
