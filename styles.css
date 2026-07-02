@@ -680,6 +680,54 @@ html[data-active-section="contacto"] #contacto {
     padding-right: 5%;
 }
 
+/* Mapa de ubicaci\u00f3n */
+.mapa-container {
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.mapa-titulo {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.mapa-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(128, 0, 32, 0.12);
+    border: 3px solid rgba(128, 0, 32, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.mapa-wrapper iframe {
+    display: block;
+    width: 100%;
+}
+
+.mapa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(128, 0, 32, 0.3);
+}
+
+.mapa-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(128, 0, 32, 0.4);
+    background: #6b001a;
+}
+
 .contacto-subtitle {
     font-size: 1.25rem;
     color: var(--primary-color);
