@@ -35,7 +35,7 @@ body {
 .page-section {
     display: none;
     animation: fadeInPage 0.4s ease-in-out;
-    padding-top: 110px;
+    padding-top: 140px;
     padding-bottom: 60px;
 }
 
