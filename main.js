@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        menuBtn.classList.toggle('active');
     });
 
     // Hero Slider Logic
@@ -86,8 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Close mobile menu if open
         const navLinks = document.querySelector('.nav-links');
+        const menuBtn = document.querySelector('.menu-btn');
         if (window.innerWidth <= 768 && navLinks && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
+            if (menuBtn) menuBtn.classList.remove('active');
         }
 
         if (!isPageLoad) {
