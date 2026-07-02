@@ -147,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '4.jpeg': { title: 'Pinchos de Fruta', price: '$1.50', desc: 'Rica fruta fresca de temporada bañada en chocolate o chamoy. Ideal para el antojo rápido.' },
         
         '18.jpeg': { title: 'Fresas con Crema', price: '$2.50', desc: 'Fresas dulces, crema receta de la casa, y el toque perfecto de amor en cada cucharada.' },
-        '14.jpeg': { title: 'Postre Delicioso', price: '$3.00', desc: 'Un postre cremosito para esos momentos donde solo necesitas consentirte un rato.' },
         '15.jpeg': { title: 'Postre Especial', price: '$2.75', desc: 'Dulzura inigualable. Pregunta por este especial en nuestro local.' },
         '16.jpeg': { title: 'Postre Fresas', price: '$3.25', desc: 'Las mejores fresas con extra ingredientes y toppings a tu elección.' },
         
