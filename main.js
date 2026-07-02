@@ -81,8 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (targetId === 'hero') {
             document.getElementById('hero').classList.add('active');
-            const promo = document.querySelector('.promociones');
-            if(promo) promo.classList.add('active');
         }
 
         // Close mobile menu if open
