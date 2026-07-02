@@ -932,4 +932,24 @@ html[data-active-section="contacto"] #contacto {
         height: 140px;
         border-radius: 12px;
     }
+
+    /* Contacto y Footer Mobile Fixes */
+    .contacto-texto h2 {
+        font-size: 2rem;
+    }
+    .contacto-section {
+        padding-bottom: 90px;
+    }
+    .footer {
+        padding-bottom: 90px;
+    }
+    .social-btn {
+        font-size: 1rem;
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+    .contacto-imagen img {
+        border-radius: 20px;
+    }
 }
