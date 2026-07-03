@@ -289,4 +289,24 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
+    // --- ANIMACIONES DE SCROLL (REVEAL) ---
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOptions = {
+        threshold: 0.1, // El elemento aparece cuando un 10% es visible
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Dejar de observar una vez que ya apareció
+            }
+        });
+    }, revealOptions);
+
+    reveals.forEach(reveal => {
+        revealOnScroll.observe(reveal);
+    });
 });

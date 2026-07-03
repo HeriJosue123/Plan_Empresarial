@@ -1262,3 +1262,20 @@ html[data-active-section="contacto"] #contacto {
         border-radius: 20px;
     }
 }
+
+/* --- ANIMACIONES DE SCROLL (REVEAL) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efectos escalonados suaves para las tarjetas de productos y galería */
+.cards-container .product-card:nth-child(1) { transition-delay: 0.1s; }
+.cards-container .product-card:nth-child(2) { transition-delay: 0.25s; }
+.galeria-grid img.reveal { transition-delay: 0.1s; }
