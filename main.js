@@ -152,22 +152,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Información de Productos (Catálogo)
     const productInfo = {
-        '3.jpeg': { title: 'Mangoneada Exótica', price: '$2.50', desc: '¡DULCE, PICOSITA Y REFRESCANTE! El antojo que te enamora. Mango fresco y natural con chamoy, chile y limón.' },
-        '17.jpeg': { title: 'Mangoneada Especial', price: '$3.00', desc: 'Nuestra especialidad de mango con más chamoy y dulces picantes para doble diversión.' },
-        '7.jpeg': { title: 'Chamoyada Clásica', price: '$2.25', desc: 'La clásica bebida refrescante que mezcla lo dulce del hielo frutal con lo acidito del chamoy.' },
-        '8.jpeg': { title: 'Chamoyada Frutal', price: '$2.75', desc: 'Trocitos de fruta natural ahogados en una deliciosa y picosita chamoyada fría.' },
-        '9.jpeg': { title: 'Chamoyada Mix', price: '$3.00', desc: 'Una explosión de sabores combinados. Perfecta para combatir el calor con estilo.' },
+        '3.jpeg': { title: 'Mangoneada Exótica', price: '$2.00', desc: '¡DULCE, PICOSITA Y REFRESCANTE! El antojo que te enamora. Mango fresco y natural con chamoy, chile y limón.' },
+        '17.jpeg': { title: 'Mangoneada Especial', price: '$2.50', desc: 'Nuestra especialidad de mango con más chamoy y dulces picantes para doble diversión.' },
+        '7.jpeg': { title: 'Chamoyada Clásica', price: '$2.00', desc: 'La clásica bebida refrescante que mezcla lo dulce del hielo frutal con lo acidito del chamoy.' },
+        '8.jpeg': { title: 'Chamoyada Frutal', price: '$2.50', desc: 'Trocitos de fruta natural ahogados en una deliciosa y picosita chamoyada fría.' },
+        '9.jpeg': { title: 'Chamoyada Mix', price: '$2.75', desc: 'Una explosión de sabores combinados. Perfecta para combatir el calor con estilo.' },
         
         '4.jpeg': { title: 'Pinchos de Fruta', price: '$1.50', desc: 'Rica fruta fresca de temporada bañada en chocolate o chamoy. Ideal para el antojo rápido.' },
         
-        '18.jpeg': { title: 'Fresas con Crema', price: '$2.50', desc: 'Fresas dulces, crema receta de la casa, y el toque perfecto de amor en cada cucharada.' },
-        '15.jpeg': { title: 'Postre Especial', price: '$2.75', desc: 'Dulzura inigualable. Pregunta por este especial en nuestro local.' },
-        '16.jpeg': { title: 'Postre Fresas', price: '$3.25', desc: 'Las mejores fresas con extra ingredientes y toppings a tu elección.' },
+        '18.jpeg': { title: 'Fresas con Crema', price: 'Desde $2.50', desc: 'Fresas dulces, crema receta de la casa, y el toque perfecto de amor en cada cucharada.' },
+        '15.jpeg': { title: 'Especialidad Frappé', price: '$2.75', desc: 'Dulzura inigualable. Pregunta por este especial de sabores únicos en nuestro local.' },
+        '16.jpeg': { title: 'Postre Fresas', price: 'Desde $3.50', desc: 'Las mejores fresas con extra ingredientes y toppings a tu elección.' },
         
-        'WhatsApp Image 2026-06-30 at 7.03.50 PM.jpeg': { title: 'Frappé de Oreo', price: '$3.00', desc: '¡Delicioso, cremoso y refrescante! Galletas Oreo crujientes y crema batida.' },
-        'WhatsApp Image 2026-06-30 at 7.03.51 PM.jpeg': { title: 'Fresada', price: '$2.50', desc: 'Una bebida dulce y rosa con todo el sabor natural de la fresa y leche condensada.' },
+        'WhatsApp Image 2026-06-30 at 7.03.50 PM.jpeg': { title: 'Frappé de Oreo', price: '$2.50', desc: '¡Delicioso, cremoso y refrescante! Galletas Oreo crujientes y crema batida.' },
+        'WhatsApp Image 2026-06-30 at 7.03.51 PM.jpeg': { title: 'Fresada', price: '$2.25', desc: 'Una bebida dulce y rosa con todo el sabor natural de la fresa y leche condensada.' },
         
-        'ChocoLoco2.jpeg': { title: 'Choco Loco', price: 'Desde $1.25', desc: 'Dulce, divertido y espectacular. El postre perfecto bañado en chocolate y gomitas.' },
+        'ChocoLoco2.jpeg': { title: 'Choco Loco', price: '$1.25', desc: 'Dulce, divertido y espectacular. El postre perfecto bañado en chocolate y gomitas.' },
         'menu.jpeg': { title: 'Nuestro Menú', price: 'Variedad de Opciones', desc: '¡Conoce todos nuestros sabores y opciones para que endulces o le des un toque picosito a tu día!' },
         
         '19.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' },
