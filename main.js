@@ -161,17 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
         '4.jpeg': { title: 'Pinchos de Fruta', price: '$1.50', desc: 'Rica fruta fresca de temporada bañada en chocolate o chamoy. Ideal para el antojo rápido.' },
         
         '18.jpeg': { title: 'Fresas con Crema', price: 'Desde $2.50', desc: 'Fresas dulces, crema receta de la casa, y el toque perfecto de amor en cada cucharada.' },
-        '15.jpeg': { title: 'Especialidad Frappé', price: '$2.75', desc: 'Dulzura inigualable. Pregunta por este especial de sabores únicos en nuestro local.' },
-        '16.jpeg': { title: 'Postre Fresas', price: 'Desde $3.50', desc: 'Las mejores fresas con extra ingredientes y toppings a tu elección.' },
+        '15.jpeg': { title: 'Especialidad Frapp\u00e9', price: '$2.75', desc: 'Dulzura inigualable. Pregunta por este especial de sabores \u00fanicos en nuestro local.' },
         
-        'WhatsApp Image 2026-06-30 at 7.03.50 PM.jpeg': { title: 'Frappé de Oreo', price: '$2.50', desc: '¡Delicioso, cremoso y refrescante! Galletas Oreo crujientes y crema batida.' },
+        'WhatsApp Image 2026-06-30 at 7.03.50 PM.jpeg': { title: 'Frapp\u00e9 de Oreo', price: '$2.50', desc: '\u00a1Delicioso, cremoso y refrescante! Galletas Oreo crujientes y crema batida.' },
         'WhatsApp Image 2026-06-30 at 7.03.51 PM.jpeg': { title: 'Fresada', price: '$2.25', desc: 'Una bebida dulce y rosa con todo el sabor natural de la fresa y leche condensada.' },
         
         'ChocoLoco2.jpeg': { title: 'Choco Loco', price: '$1.25', desc: 'Dulce, divertido y espectacular. El postre perfecto bañado en chocolate y gomitas.' },
         'menu.jpeg': { title: 'Nuestro Menú', price: 'Variedad de Opciones', desc: '¡Conoce todos nuestros sabores y opciones para que endulces o le des un toque picosito a tu día!' },
         
-        '19.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' },
-        '21.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' },
+        '19.jpeg': { title: '\u00a1Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. \u00a1Gracias por preferir PJ Strawberries!' },
+        '16.jpeg': { title: '\u00a1Clientes Felices!', price: 'Invaluable', desc: '\u00a1Nuestros clientes amando su Choco Loco de Fresa con malvaviscos! \u00a1Gracias por preferirnos!' },
+        '21.jpeg': { title: '\u00a1Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. \u00a1Gracias por preferir PJ Strawberries!' },
         '23.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' },
         '24.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' },
         '25.jpeg': { title: '¡Clientes Felices!', price: 'Invaluable', desc: 'Nos encanta verlos disfrutar de nuestros antojitos. ¡Gracias por preferir PJ Strawberries!' }
